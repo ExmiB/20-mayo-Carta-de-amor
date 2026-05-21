@@ -1,0 +1,168 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #fae1dd;
+    margin: 0;
+}
+
+.contenedor {
+    position: relative;
+
+}
+
+.superior {
+    position: absolute;
+    border-left: 260px solid transparent;
+    border-right: 260px solid transparent;
+    border-top: 170px solid #f08080;
+    border-bottom: 170px solid transparent;
+
+    transition: transform .75s;
+    transform-origin: top;
+}
+
+.mensaje {
+    position: absolute;
+    padding: 1.5rem;
+    line-height: 1.2rem;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: "Story Script";
+    font-size: 17px;
+    background: #eae2b7;
+    width: 520px;
+    height: 340px;
+    z-index: -1;
+    transition: transform 0.75s ease-in-out;
+
+}
+
+.mensaje::before {
+    content: "";
+    border-style: dotted;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 35px;
+}
+
+.mensaje p {
+    position: relative;
+    top: -10px;
+    font-size: 1.2rem;
+}
+
+.carta {
+    border-left: 260px solid #f8ad9d;
+    border-right: 260px solid #f4978e;
+    border-top: 170px solid transparent;
+    border-bottom: 170px solid #f8ad9d;
+}
+
+.bx {
+    position: absolute;
+    color: #f6406a;
+    top: 130px;
+    right: 225px;
+    font-size: 70px;
+    animation: palpitar 0.6s linear infinite;
+}
+
+.pcarta {
+    margin-top: -10px;
+}
+
+.botones {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.boton {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #ff66b2, #ff4083);
+    background-size: 200% 200%;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+}
+
+.boton:hover {
+    background-position: 100%, 100%;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/*Para JavaScript*/
+.abrir-superior {
+    transform: rotateX(180deg);
+}
+
+.abrir-mensaje {
+    transform: translateY(-210px)
+}
+
+.bx-rotada {
+    color: #f6406a;
+    animation: none;
+}
+
+
+/*esta es la animacion para palpital el corazón*/
+@keyframes palpitar {
+    0% {
+        transform: scale(1.07);
+    }
+
+    80% {
+        transform: scale(1.0);
+    }
+
+    100% {
+        transform: scale(1.08);
+    }
+}
+
+@media (max-width: 768px) {
+    .mensaje {
+        position: absolute;
+        padding: 1.5rem;
+        line-height: 1.2rem;
+        box-sizing: border-box;
+        text-align: center;
+        font-family: "Story Script";
+        font-size: 17px;
+        background: #eae2b7;
+        width: 520px;
+        height: 340px;
+        z-index: -1;
+        transition: transform 0.75s ease-in-out;
+
+    }
+
+    .mensaje::before {
+        content: "";
+        border-style: dotted;
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        right: 12px;
+        bottom: 40px;
+    }
+
+    .mensaje p {
+        position: relative;
+        top: -15px;
+        font-size: 1rem;
+    }
+}
